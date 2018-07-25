@@ -1,4 +1,3 @@
-
 import 'package:flutter_mi_master/MasterFiles/MasterConstant.dart';
 
 //import 'main.dart';
@@ -19,9 +18,6 @@ class LoginViewState extends State<LoginViewController>
   double cTopSpaceOfAnimationView;
   AnimationController _controller;
   Animation<double> animation;
-
-
-
 
   @override
   void initState() {
@@ -54,7 +50,6 @@ class LoginViewState extends State<LoginViewController>
     WidgetsBinding.instance.removeObserver(this);
 
     super.dispose();
-
   }
 
   AppLifecycleState _notification;
@@ -62,14 +57,11 @@ class LoginViewState extends State<LoginViewController>
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     setState(() {
-
       _notification = state;
 
       print("APPLICATION STATE ==== $state");
-
     });
   }
-
 
   Future<Null> _playAnimation() async {
     try {
@@ -345,32 +337,14 @@ class LoginViewState extends State<LoginViewController>
                           fontSize: 15.0),
                     ),
                     onPressed: () {
+                      MIGalleryClass().openGalleryForVideo().then((file){
 
-                      MILocationManager.shared.convertAddressIntoLatLong("YOUR - ADDRESS").then((placemark){
-                        print("ADD LAT ===== ${placemark.position.latitude},  ADD LONG ==== ${placemark.position.longitude}");
-                      });
+                        print("openGalleryForVideo ========= $file");
 
-                      MILocationManager.shared.convertLatLongIntoAddress(23.048150230718843,72.54094211572558).then((placemark){
-                        print("ADD LAT ===== ${placemark.position.latitude},  ADD LONG ==== ${placemark.position.longitude}");
-                        print("subLocality ===== ${placemark.subLocality}");
-                        print("administrativeArea ===== ${placemark.administrativeArea}");
-                        print("subAdministratieArea ===== ${placemark.subAdministratieArea}");
-                        print("thoroughfare ===== ${placemark.thoroughfare}");
-                      });
-                      
-                      MILocationManager.shared.calculateDistanceBetweenTwoCoordination(52.2165157, 6.9437819, 52.3546274, 4.8285838).then((distance){
-                        print("Distance =========== $distance");
+
                       });
 
 
-                      print("latitude ======= ${MILocationManager.shared.updatePosition.latitude}");
-                      print("longitude ========= ${MILocationManager.shared.updatePosition.longitude}");
-
-
-
-
-
-                      Timer(Duration(seconds: 5), () {});
                     }),
               ),
             ],

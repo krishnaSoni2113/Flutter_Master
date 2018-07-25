@@ -115,35 +115,44 @@ bool isSimulator() {
 typedef configureGalleryCallBack = void Function(File);
 
 class MIGalleryClass {
-  MIGalleryClass({
-    this.onGalleryFile,
-  });
-  final configureGalleryCallBack onGalleryFile;
 
-  File _image;
+//  MIGalleryClass({
+//    this.onGalleryFile,
+//  });
+//  final configureGalleryCallBack onGalleryFile;
 
-  Future openGallery() async {
+
+  Future<File> openGalleryForImage() async {
     var image = await ImagePicker.pickImage(source: ImageSource.gallery);
-    _image = image;
-    if (_image != null) onGalleryFile(_image);
+    return image;
   }
+
+  Future<File> openGalleryForVideo() async {
+    var video = await ImagePicker.pickVideo(source: ImageSource.gallery);
+    return video;
+  }
+
 }
 
 typedef configureCameraCallBack = void Function(File);
 
 class MICameraClass {
-  MICameraClass({
-    this.onCameraFile,
-  });
-  final configureCameraCallBack onCameraFile;
+//  MICameraClass({
+//    this.onCameraFile,
+//  });
+//  final configureCameraCallBack onCameraFile;
 
-  File _image;
 
-  Future openCamera() async {
+
+  Future<File> openCameraForImage() async {
     var image = await ImagePicker.pickImage(source: ImageSource.camera);
-    _image = image;
+    return image;
+  }
 
-    if (_image != null) onCameraFile(_image);
+
+  Future<File> openCameraForVideo() async {
+    var video = await ImagePicker.pickVideo(source: ImageSource.camera);
+    return video;
   }
 }
 
