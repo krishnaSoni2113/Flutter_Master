@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>801977093674-9qiiutqg6csso3sfg4sc8c3r9hvvisut.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.801977093674-9qiiutqg6csso3sfg4sc8c3r9hvvisut</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCxm62Watc0Nqe5VXQie7kuTM6KE9YhSAo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>801977093674</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.elegaladmin.asia</string>
+	<key>PROJECT_ID</key>
+	<string>elegal</string>
+	<key>STORAGE_BUCKET</key>
+	<string>elegal.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:801977093674:ios:73f9ce114e45b4fe</string>
+	<key>DATABASE_URL</key>
+	<string>https://elegal.firebaseio.com</string>
+</dict>
+</plist>
