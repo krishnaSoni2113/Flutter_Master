@@ -1,6 +1,5 @@
 import 'package:flutter_mi_master/MasterFiles/MasterConstant.dart';
-
-//import 'main.dart';
+import 'package:flutter/cupertino.dart';
 
 List arrIntroImages = List();
 BuildContext context;
@@ -53,6 +52,7 @@ class LoginViewState extends State<LoginViewController>
   }
 
   AppLifecycleState _notification;
+  int _page = 0;
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
@@ -88,7 +88,13 @@ class LoginViewState extends State<LoginViewController>
                 height: screenHeight(),
                 width: screenWidth(),
                 color: Colors.green,
-                child: gridView(),
+                child: new PageView(
+                    children: _getTiles(),
+                  onPageChanged:(index){
+                    print("INDEX ============= $index");
+                    this._page = index;
+                  },
+                ),
               ),
             ),
             loginSingUpFrom()
@@ -99,9 +105,9 @@ class LoginViewState extends State<LoginViewController>
   }
 
   void getIntroImageArray() {
-    arrIntroImages.add("Images/k.jpg");
+    arrIntroImages.add("Images/2.jpg");
     arrIntroImages.add("Images/1.jpg");
-    arrIntroImages.add("Images/k.jpg");
+    arrIntroImages.add("Images/2.jpg");
     arrIntroImages.add("Images/1.jpg");
   }
 
@@ -111,11 +117,10 @@ class LoginViewState extends State<LoginViewController>
     for (int i = 0; i < arrIntroImages.length; i++) {
       tiles.add(new GridTile(
         child: Container(
-          height: screenHeight(),
-          width: screenWidth(),
           decoration: BoxDecoration(
-              color: Colors.transparent,
+              color: i % 2 == 0 ? Colors.red : Colors.orange,
               image: DecorationImage(
+                  fit: BoxFit.fill,
                   alignment: FractionalOffset.center,
                   image: Image
                       .asset(
@@ -126,17 +131,8 @@ class LoginViewState extends State<LoginViewController>
         ),
       ));
     }
-    return tiles;
-  }
 
-  Widget gridView() {
-    return GridView(
-        gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
-        scrollDirection: Axis.horizontal,
-//      crossAxisCount: 1,
-        physics: ScrollPhysics(),
-        children: _getTiles());
+    return tiles;
   }
 
   Widget loginSingUpFrom() {
@@ -337,14 +333,9 @@ class LoginViewState extends State<LoginViewController>
                           fontSize: 15.0),
                     ),
                     onPressed: () {
-                      MIGalleryClass().openGalleryForVideo().then((file){
-
+                      MIGalleryClass().openGalleryForVideo().then((file) {
                         print("openGalleryForVideo ========= $file");
-
-
                       });
-
-
                     }),
               ),
             ],
