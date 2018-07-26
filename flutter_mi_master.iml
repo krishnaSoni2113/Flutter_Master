@@ -27,6 +27,12 @@
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/geolocation/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/geolocation/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/geolocation/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/geolocator/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/geolocator/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/geolocator/build" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/geolocator/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/geolocator/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/geolocator/example/build" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/google_sign_in/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/google_sign_in/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/google_sign_in/build" />

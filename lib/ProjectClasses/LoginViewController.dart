@@ -1,6 +1,7 @@
 import 'package:flutter_mi_master/MasterFiles/MasterConstant.dart';
 import 'package:flutter/cupertino.dart';
 
+
 List arrIntroImages = List();
 BuildContext context;
 bool isLoginButtonSelected = false;
@@ -58,7 +59,6 @@ class LoginViewState extends State<LoginViewController>
   void didChangeAppLifecycleState(AppLifecycleState state) {
     setState(() {
       _notification = state;
-
       print("APPLICATION STATE ==== $state");
     });
   }
@@ -75,6 +75,9 @@ class LoginViewState extends State<LoginViewController>
 
   @override
   Widget build(BuildContext appContext) {
+
+
+
     context = appContext;
 
     Container container = Container(
@@ -333,9 +336,15 @@ class LoginViewState extends State<LoginViewController>
                           fontSize: 15.0),
                     ),
                     onPressed: () {
-                      MIGalleryClass().openGalleryForVideo().then((file) {
-                        print("openGalleryForVideo ========= $file");
+
+
+                      MIPicker.shared.timePicker(context).then((time){
+                        print("Selected Time ============= ${time.hour}");
                       });
+
+
+
+
                     }),
               ),
             ],

@@ -8,6 +8,9 @@ export 'MISocial.dart';
 export 'MIDocumentsDirectory.dart';
 export 'MILocalDataBase.dart';
 export 'MILocationManager.dart';
+export 'MIPicker.dart';
+export 'package:flutter/services.dart';
+
 
 export 'package:flutter/material.dart';
 export 'package:flutter/widgets.dart';
