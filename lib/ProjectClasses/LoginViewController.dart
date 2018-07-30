@@ -7,6 +7,10 @@ BuildContext context;
 bool isLoginButtonSelected = false;
 bool isSignButtonSelected = false;
 
+
+Future sessionTask;
+
+
 class LoginViewController extends StatefulWidget {
   @override
   LoginViewState createState() => LoginViewState();
@@ -14,6 +18,7 @@ class LoginViewController extends StatefulWidget {
 
 class LoginViewState extends State<LoginViewController>
     with TickerProviderStateMixin, WidgetsBindingObserver {
+
   double animationViewHeight;
   double cTopSpaceOfAnimationView;
   AnimationController _controller;
@@ -22,6 +27,9 @@ class LoginViewState extends State<LoginViewController>
   @override
   void initState() {
     super.initState();
+
+
+
 
     WidgetsBinding.instance.addObserver(this);
 
@@ -337,12 +345,13 @@ class LoginViewState extends State<LoginViewController>
                     ),
                     onPressed: () {
 
+                      APIRequest.shared.cancelRunningApiRequest(sessionTask);
 
-                      MIPicker.shared.timePicker(context).then((time){
-                        print("Selected Time ============= ${time.hour}");
+                      sessionTask = APIRequest.shared.login().then((response) {
+                        print("Response ========== ${response.body}");
+                        sessionTask = null;
+
                       });
-
-
 
 
                     }),

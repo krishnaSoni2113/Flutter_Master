@@ -68,6 +68,7 @@ class MILoader {
                 type: MaterialType.transparency,
                 child: Text(
                   message,
+                  // ignore: conflicting_dart_import
                   style: TextStyle(
                       fontSize: 15.0,
                       color: Colors.white,

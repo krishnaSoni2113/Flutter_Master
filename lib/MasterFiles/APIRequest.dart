@@ -27,6 +27,8 @@ const CStatus550 = 550; // Inactive/Delete user
 const CStatus555 = 555; // Invalid request
 const CStatus556 = 556; // Invalid request
 
+
+
 class APIRequest {
   static final APIRequest shared = new APIRequest._internal();
 
@@ -191,6 +193,19 @@ class APIRequest {
     }
   }
 
+  cancelRunningApiRequest(Future sessionTask) {
+
+    if (sessionTask != null)
+    {
+      StreamQueue reqQue = StreamQueue(Stream.fromFuture(sessionTask));
+      print("reqQue ========== $reqQue");
+
+       reqQue.cancel();
+      print("cancel========== ${reqQue.cancel()}");
+    }
+
+  }
+
   bool checkResponseStatusAndShowAlert(String apiTag, http.Response response) {
     // Manage your status here.....
 
@@ -202,7 +217,9 @@ class APIRequest {
   }
 
   /* ----------------------- Application Functions ----------------------- */
+
   Future<http.Response> login() async {
+
     return _POST(
         "login",
         {

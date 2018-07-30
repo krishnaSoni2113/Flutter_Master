@@ -26,7 +26,4 @@ class MIPicker {
     await showTimePicker(context: context, initialTime: TimeOfDay.now());
     return pickedTime;
   }
-  
-
-  
 }
